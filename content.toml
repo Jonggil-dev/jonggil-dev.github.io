@@ -33,7 +33,7 @@ dates = "2026.08 ~ 현재"
 quote = "차량 관제 SaaS Orbit의 백엔드 개발과 AWS 인프라 운영"
 description = """
 * 웹과 앱(App Store, Google Play) 출시
-* 단일 서버 운영 환경을 ALB, ECS, RDS 구조로 마이그레이션
+* 단일 서버(Docker Compose) 운영 환경을 ECS로 마이그레이션
 * 무중단 롤링 배포와 자동 롤백, dev 이미지의 prod 프로모션 구축
 * Terraform IaC 도입, OIDC로 장기 액세스 키 없는 CI/CD 구축
 * 이음 관제 대시보드 고도화(쿼리와 화면 성능 개선)
@@ -99,7 +99,7 @@ description = """
 * advisory lock과 조건부 UPDATE로 배차 동시성 제어, 초과 예약 방지
 * 새벽 배치에서 그리디 알고리즘으로 예약 배차 자동 배정
 * 외부 API 호출을 트랜잭션 커밋 이후로 분리해 알림 누락 해소
-* 콜 신청 지연 원인인 풀 스캔을 LATERAL 조인으로 해결, 2.1초&nbsp;→&nbsp;1ms 미만 (dev)
+* 콜 신청 지연 원인인 풀 스캔을 LATERAL 조인으로 해결, 2.1초&nbsp;→&nbsp;1ms 미만 (로컬, GPS 이력 40만 행)
 * REQUIRES_NEW로 생긴 커넥션 풀 고갈을 MANDATORY 전파로 수정
 * ECU 이력 조회에 복합 인덱스 적용, 응답 3초&nbsp;→&nbsp;0.1초 (dev)
 """
